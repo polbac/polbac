@@ -46,6 +46,7 @@ const Home = () => (
 
 
     <style jsx>{`
+      .title{font-size:20px;}
       .hero{
         width: 90%;
         max-width: 400px;
@@ -111,7 +112,7 @@ const Home = () => (
       .title {
         margin: 0;
         line-height: 1.15;
-        font-size: 4rem;
+        font-size: 3rem;
       }
 
       .title,
