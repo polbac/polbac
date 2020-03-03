@@ -3,61 +3,58 @@ import Head from 'next/head'
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
+      <title>polbac</title>
+      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Prompt&display=swap" rel="stylesheet" />
+
     </Head>
 
     <main>
       <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+      ☯️ polbac 🈯️
       </h1>
 
       <p className="description">
-        Get started by editing <code>pages/index.js</code>
+        universal javascript developer
       </p>
 
+
+      <img src="polbac.png" className="hero" alt=""/>
+
       <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
+        <a target="_blank" href="pablobacchetta-cv.pdf" className="card">
+        
+          <h3><span className="emoji">📜</span><br/>cv</h3>
         </a>
 
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
+        
+
+        <a target="_blank" href="https://github.com/polbac" className="card">
+        
+          <h3><span className="emoji">🎎</span><br/>github</h3>
         </a>
 
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
+        <a target="_blank" href="https://medium.com/@polbac" className="card">
+        
+          <h3><span className="emoji">🖌</span><br/>medium</h3>
         </a>
-
-        <a
-          href="https://zeit.co/new?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
+        <a target="_blank" href="https://www.linkedin.com/in/pablo-gustavo-bacchetta-b780b390/" className="card">
+        
+          <h3><span className="emoji">🌎</span><br/>linkedin</h3>
         </a>
       </div>
     </main>
 
-    <footer>
-      <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-      </a>
-    </footer>
 
     <style jsx>{`
+      .hero{
+        width: 90%;
+        max-width: 400px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .emoji{
+        font-size: 40px;
+      }
       .container {
         min-height: 100vh;
         padding: 0 0.5rem;
@@ -156,18 +153,20 @@ const Home = () => (
         border: 1px solid #eaeaea;
         border-radius: 10px;
         transition: color 0.15s ease, border-color 0.15s ease;
+        text-align: center;
       }
 
       .card:hover,
       .card:focus,
       .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
+        color: black;
+        border-color: black;
       }
 
       .card h3 {
         margin: 0 0 1rem 0;
         font-size: 1.5rem;
+        line-height:60px;
       }
 
       .card p {
@@ -181,15 +180,25 @@ const Home = () => (
           width: 100%;
           flex-direction: column;
         }
+        .card{
+          width: 90%;
+        }
+        .title{
+          font-size: 30px;
+        }
+        .description{
+          font-size: 20px;
+        }
       }
     `}</style>
 
     <style jsx global>{`
       html,
       body {
+        color: blue;
         padding: 0;
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        font-family: "Press Start 2P", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       }
 
