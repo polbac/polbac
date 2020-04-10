@@ -13,7 +13,7 @@ const Home = () => {
     
     useEffect(() => {
       const PIXI = require('pixi.js')
-      const app = new PIXI.Application();
+      
       const image = document.getElementById("image");
 
       var width = window.innerWidth > 800 ? 800 : window.innerWidth;
@@ -36,16 +36,17 @@ const Home = () => {
       tp = PIXI.Texture.from(imageURL);
       preview = new PIXI.Sprite(tp);
 
-      var spriteWidth = width * 0.7;
-      var spriteHeight = height * 0.7;
-      var spX = width/2 - spriteWidth/2;
-      var spY = height/2 - spriteHeight/2;
-      preview.anchor.x = 0;
-      preview.anchor.y = 0;
+      var spriteWidth = width * 0.8;
+      var spriteHeight = height * 0.8;
+      var spX = 800/2 - spriteWidth/2;
+      var spY = 600/2 - spriteHeight/2;
+      
+
+
       preview.width = spriteWidth;
       preview.height = spriteHeight;
       preview.x = spX;
-      preview.y = 20;
+      preview.y = spY;
   
       displacementSprite = PIXI.Sprite.from('noise.png');
       displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
@@ -55,7 +56,7 @@ const Home = () => {
       displacementSprite.width = spriteWidth;
       displacementSprite.height = spriteHeight;
       displacementSprite.x = spX;
-      displacementSprite.y = 20;
+      displacementSprite.y = spY;
 
 
       stage.addChild(displacementSprite);
@@ -147,7 +148,6 @@ const Home = () => {
       }
       .container {
         min-height: 100vh;
-        padding: 0 0.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -267,21 +267,7 @@ const Home = () => {
         line-height: 1.5;
       }
 
-      @media (max-width: 600px) {
-        .grid {
-          width: 100%;
-          flex-direction: column;
-        }
-        .card{
-          width: 90%;
-        }
-        .title{
-          font-size: 30px;
-        }
-        .description{
-          font-size: 20px;
-        }
-      }
+      
       #image{
         text-align: center;
         transition: all 0.5s ease;
