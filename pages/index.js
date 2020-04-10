@@ -1,7 +1,89 @@
 import Head from 'next/head'
 
-const Home = () => (
-  <div className="container">
+import { useEffect } from 'react'
+
+
+const Home = () => {
+    var ratio = 150 / 830;
+    var count = 0;
+    var raf;
+    const imageURL = 'polbac.png'
+    var canvas;
+    const imageRatio = 1186/1200;
+    
+    useEffect(() => {
+      const PIXI = require('pixi.js')
+      const app = new PIXI.Application();
+      const image = document.getElementById("image");
+
+      var width = window.innerWidth > 800 ? 800 : window.innerWidth;
+      var height = width * imageRatio;
+      var playground = image;
+      
+
+      var renderer = PIXI.autoDetectRenderer(width, height, {transparent:true});
+      renderer.backgroundColor = 0x0000FF;
+      renderer.autoResize = true;
+      var tp, preview;
+      var displacementSprite,
+        displacementFilter,
+        stage;
+
+      playground.appendChild(renderer.view);
+
+      stage = new PIXI.Container();
+
+      tp = PIXI.Texture.from(imageURL);
+      preview = new PIXI.Sprite(tp);
+
+      var spriteWidth = width * 0.7;
+      var spriteHeight = height * 0.7;
+      var spX = width/2 - spriteWidth/2;
+      var spY = height/2 - spriteHeight/2;
+      preview.anchor.x = 0;
+      preview.anchor.y = 0;
+      preview.width = spriteWidth;
+      preview.height = spriteHeight;
+      preview.x = spX;
+      preview.y = 20;
+  
+      displacementSprite = PIXI.Sprite.from('noise.png');
+      displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+
+       displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+      displacementSprite.width = spriteWidth;
+      displacementSprite.height = spriteHeight;
+      displacementSprite.x = spX;
+      displacementSprite.y = 20;
+
+
+      stage.addChild(displacementSprite);
+
+      stage.addChild(preview);
+
+      animate();
+
+      function animate() {
+        raf = requestAnimationFrame(animate);
+                
+        displacementSprite.x = count*10;
+        displacementSprite.y = count*10;
+    
+        count += 0.15;
+    
+        stage.filters = [displacementFilter];
+    
+        renderer.render(stage);
+    
+        canvas = playground.querySelector('canvas');
+    }
+
+  })
+
+  
+
+  return (<div className="container">
     <Head>
       <title>polbac</title>
       <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Prompt&display=swap" rel="stylesheet" />
@@ -10,15 +92,16 @@ const Home = () => (
 
     <main>
       <h1 className="title">
-      ☯️ polbac 🈯️
+      p☯lbac
       </h1>
 
       <p className="description">
         universal javascript developer
       </p>
 
+      <div id="image">
 
-      <img src="polbac.png" className="hero" alt=""/>
+      </div>
 
       <div className="grid">
         <a target="_blank" href="pablobacchetta-cv.pdf" className="card">
@@ -46,7 +129,13 @@ const Home = () => (
 
 
     <style jsx>{`
-      .title{font-size:20px;}
+
+      .title{
+        position: sticky;
+        top: 20px;
+        font-size: 40px; letter-spacing: 50px;
+        z-index: 1000;
+        }
       .hero{
         width: 90%;
         max-width: 400px;
@@ -118,6 +207,7 @@ const Home = () => (
       .title,
       .description {
         text-align: center;
+        letter-spacing: 10px;
       }
 
       .description {
@@ -153,8 +243,8 @@ const Home = () => (
         text-decoration: none;
         border: 1px solid #eaeaea;
         border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
         text-align: center;
+        transition: all 0.5 ease-in;
       }
 
       .card:hover,
@@ -162,6 +252,7 @@ const Home = () => (
       .card:active {
         color: black;
         border-color: black;
+        font-variation-settings: 'wght' 900;
       }
 
       .card h3 {
@@ -191,23 +282,39 @@ const Home = () => (
           font-size: 20px;
         }
       }
+      #image{
+        text-align: center;
+        transition: all 0.5s ease;
+      }
+      #image:hover{
+        transform: scale(1.05);
+      }
     `}</style>
 
     <style jsx global>{`
+      @font-face{
+        font-family: "BandeinsSansVariable";
+        src: url('/fonts/variable/BandeinsSansVariableGX.ttf')
+      }
       html,
       body {
         color: blue;
         padding: 0;
         margin: 0;
-        font-family: "Press Start 2P", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: "BandeinsSansVariable", Helvetica Neue, sans-serif;
+        background: blue;
+        color: white;
       }
 
       * {
         box-sizing: border-box;
       }
+      canvas{
+  width: 100%;
+  height: 100%;
+}
     `}</style>
-  </div>
-)
+  </div>)
+}
 
 export default Home
