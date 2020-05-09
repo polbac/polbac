@@ -1,87 +1,69 @@
 import Head from 'next/head'
 
+let Sketch
+
+if (process.browser) {
+  Sketch = require("react-p5")
+}
+
+
 import { useEffect } from 'react'
 
+const SIZE_WIDTH = 500;
+const SIZE_HEIGHT = 200;
+const GRID_STEPS = 70;
+const GRID_SIZE_WIDTH = SIZE_WIDTH / GRID_STEPS;
+const GRID_SIZE_HEIGHT = SIZE_HEIGHT / GRID_STEPS;
 
 const Home = () => {
-    var ratio = 150 / 830;
-    var count = 0;
-    var raf;
-    const imageURL = 'polbac.png'
-    var canvas;
-    const imageRatio = 1186/1200;
+    let myFont;
+    let graphic;
     
-    useEffect(() => {
-      const PIXI = require('pixi.js')
-      
-      const image = document.getElementById("image");
 
-      var width = window.innerWidth > 800 ? 800 : window.innerWidth;
-      var height = width * imageRatio;
-      var playground = image;
-      
-
-      var renderer = PIXI.autoDetectRenderer(width, height, {transparent:true});
-      renderer.backgroundColor = 0x0000FF;
-      renderer.autoResize = true;
-      var tp, preview;
-      var displacementSprite,
-        displacementFilter,
-        stage;
-
-      playground.appendChild(renderer.view);
-
-      stage = new PIXI.Container();
-
-      tp = PIXI.Texture.from(imageURL);
-      preview = new PIXI.Sprite(tp);
-
-      var spriteWidth = width * 0.8;
-      var spriteHeight = height * 0.8;
-      var spX = 800/2 - spriteWidth/2;
-      var spY = 600/2 - spriteHeight/2;
-      
-
-
-      preview.width = spriteWidth;
-      preview.height = spriteHeight;
-      preview.x = spX;
-      preview.y = spY;
-  
-      displacementSprite = PIXI.Sprite.from('noise.png');
-      displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
-
-       displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-
-      displacementSprite.width = spriteWidth;
-      displacementSprite.height = spriteHeight;
-      displacementSprite.x = spX;
-      displacementSprite.y = spY;
-
-
-      stage.addChild(displacementSprite);
-
-      stage.addChild(preview);
-
-      animate();
-
-      function animate() {
-        raf = requestAnimationFrame(animate);
-                
-        displacementSprite.x = count*10;
-        displacementSprite.y = count*10;
-    
-        count += 0.15;
-    
-        stage.filters = [displacementFilter];
-    
-        renderer.render(stage);
-    
-        canvas = playground.querySelector('canvas');
+    const preload = p5 => {
+      myFont = p5.loadFont('SpaceGrotesk-Bold.ttf');
     }
 
-  })
+    const setup = (p5, canvasParentRef) => {
+      p5.createCanvas(SIZE_WIDTH, SIZE_HEIGHT).parent(canvasParentRef);
+      graphic = p5.createGraphics(SIZE_WIDTH, SIZE_HEIGHT);
+      graphic.textFont(myFont);
+      graphic.textAlign(p5.CENTER);
+      graphic.textSize(160);
+      graphic.fill('#ff00ff');
+      graphic.text('polbac', SIZE_WIDTH/2, SIZE_HEIGHT/2);
+      
+    };
+    
+    const draw = p5 => {
+      
+      p5.background("#0000ff");
+      const wave = 0.07
 
+
+      for (let x = 0; x < GRID_STEPS; x++) {
+        for (let y = 0; y < GRID_STEPS; y++) {
+          const distorsionX = Math.sin(p5.frameCount * wave + x + y * 0.3) * 2;
+          const distorsionY = Math.sin(p5.frameCount * wave + x + y * 0.1) * 2;
+          const distanceVector = p5.createVector((x * GRID_SIZE_WIDTH) - p5.mouseX, (y * GRID_SIZE_HEIGHT) - p5.mouseY);
+          const distanseDistorsion = distanceVector.mult(5 / distanceVector.mag());
+
+          p5.image(graphic, 
+            x * GRID_SIZE_WIDTH, 
+            y * GRID_SIZE_HEIGHT, 
+            GRID_SIZE_WIDTH, 
+            GRID_SIZE_HEIGHT, 
+            x * GRID_SIZE_WIDTH + distorsionX + distanseDistorsion.x, 
+            y * GRID_SIZE_HEIGHT + distorsionY + distanseDistorsion.y, 
+            GRID_SIZE_WIDTH , 
+            GRID_SIZE_HEIGHT 
+          )
+        }
+      }
+      
+    };
+
+  
   
 
   return (<div className="container">
@@ -92,17 +74,17 @@ const Home = () => {
     </Head>
 
     <main>
-      <h1 className="title">
-      p☯lbac
-      </h1>
+      
+      {Sketch && <Sketch setup={setup} draw={draw} preload={preload} />}
 
       <p className="description">
-        universal javascript developer
+        
+        <marquee>universal javascript developer</marquee>
+
+        
       </p>
 
-      <div id="image">
-
-      </div>
+        <img id="image" src="polbac.png" alt=""/>
 
       <div className="grid">
         <a target="_blank" href="pablobacchetta-cv.pdf" className="card">
@@ -213,6 +195,11 @@ const Home = () => {
       .description {
         line-height: 1.5;
         font-size: 1.5rem;
+        width: 100%;
+      }
+
+      .description:hover{
+        color: #ff00ff;
       }
 
       code {
@@ -232,6 +219,8 @@ const Home = () => {
 
         max-width: 800px;
         margin-top: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
       }
 
       .card {
@@ -250,9 +239,7 @@ const Home = () => {
       .card:hover,
       .card:focus,
       .card:active {
-        color: black;
-        border-color: black;
-        font-variation-settings: 'wght' 900;
+        filter: blur(5px);
       }
 
       .card h3 {
@@ -273,21 +260,23 @@ const Home = () => {
         transition: all 0.5s ease;
       }
       #image:hover{
-        transform: scale(1.05);
+        
+        box-shadow: 10px 10px 10px black;
       }
+
     `}</style>
 
     <style jsx global>{`
       @font-face{
-        font-family: "BandeinsSansVariable";
-        src: url('/fonts/variable/BandeinsSansVariableGX.ttf')
+        font-family: "SpaceGrotesk-Bold";
+        src: url('/SpaceGrotesk-Bold.ttf.ttf')
       }
       html,
       body {
         color: blue;
         padding: 0;
         margin: 0;
-        font-family: "BandeinsSansVariable", Helvetica Neue, sans-serif;
+        font-family: "SpaceGrotesk-Bold", Helvetica Neue, sans-serif;
         background: blue;
         color: white;
       }
@@ -295,10 +284,29 @@ const Home = () => {
       * {
         box-sizing: border-box;
       }
-      canvas{
-  width: 100%;
-  height: 100%;
-}
+
+      body:after{
+        content:"";
+        border: 50px solid black;
+        position: fixed;
+        width: 100vw; 
+        height: 100vh; 
+        overflow-y: scroll;
+      }
+
+      #image{
+        max-width: 300px;
+        margin-top: 30px;
+        top: 10px;
+        left: 10px;
+
+      }
+
+      @-moz-keyframes spin { 100% { -moz-transform: rotateY(360deg); } }
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotateY(360deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
+
+
     `}</style>
   </div>)
 }
