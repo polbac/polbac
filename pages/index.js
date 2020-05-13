@@ -385,6 +385,8 @@ export default function Home() {
         text-align: center;
         transition: all 0.5s ease;
         box-shadow: 10px 10px 10px black;
+        position: relative;
+    z-index: 99;
       }
       #image:hover{
         
