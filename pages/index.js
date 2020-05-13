@@ -226,6 +226,7 @@ export default function Home() {
   display: block;
   position: fixed;
   right: 15px;
+  z-index: 999999;
   bottom: 15px;
   color: white;
   text-align: center;
