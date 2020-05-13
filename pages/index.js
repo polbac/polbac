@@ -31,7 +31,7 @@ const setup = (p5, canvasParentRef) => {
   graphic = p5.createGraphics(SIZE_WIDTH, SIZE_HEIGHT);
   graphic.textFont(myFont);
   graphic.textAlign(p5.CENTER);
-  graphic.textSize(SIZE_WIDTH > 360 ? 90 : 40);
+  graphic.textSize(SIZE_WIDTH > 600 ? 90 : 50);
   graphic.fill('red');
   graphic.text('polbac', SIZE_WIDTH/2, SIZE_HEIGHT/2);
 
