@@ -190,7 +190,7 @@ export default function Home() {
       <a className="project" href="http://www.matiasduville.com/" target="_blank">
         <div className="project-left">MATIAS DUVILLE</div>
         <div className="project-center">matiasduville.com</div>
-        <div className="project-right"><img height="50" src="m.png" /></div>
+        <div className="project-right"><img height="50" src="d.png" /></div>
         <img />
       </a>
 
