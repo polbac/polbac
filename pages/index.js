@@ -310,7 +310,7 @@ export default function Home() {
 
 
 
-      <img width="200" id="image" src="polbac.jpg" alt=""/>
+      <img width="200" id="image" src="polbac.jpeg" alt=""/>
       <br/>
       <br/>
       <br/>
