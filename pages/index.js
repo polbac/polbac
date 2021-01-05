@@ -276,7 +276,7 @@ export default function Home() {
 
       </div>
 
-      <h3 className='title white'>lets growth.</h3>
+      <h3 className='title white'>lets grow.</h3>
       <br/>
       <br/>
 
