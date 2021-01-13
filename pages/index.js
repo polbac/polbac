@@ -180,12 +180,21 @@ export default function Home() {
         <img />
       </a>
 
+      <a className="project" href="http://lecube.tv/" target="_blank">
+        <div className="project-left">LECUBE</div>
+        <div className="project-center">lecube.tv</div>
+        <div className="project-right"><img height="50" src="l.png" /></div>
+        <img />
+      </a>
+
       <a className="project" href="https://www.nanasch.com.ar/" target="_blank">
         <div className="project-left">NANA SCHLEZ</div>
         <div className="project-center">nanasch.com.ar</div>
         <div className="project-right"><img height="50" src="n.png" /></div>
         <img />
       </a>
+
+      
 
       <a className="project" href="http://www.matiasduville.com/" target="_blank">
         <div className="project-left">MATIAS DUVILLE</div>
