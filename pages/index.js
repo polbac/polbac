@@ -32,7 +32,7 @@ const setup = (p5, canvasParentRef) => {
   graphic.textFont(myFont);
   graphic.textAlign(p5.CENTER);
   graphic.textSize(SIZE_WIDTH > 600 ? 90 : 50);
-  graphic.fill('#ffa8dc');
+  graphic.fill('#65e590');
   graphic.text('polbac', SIZE_WIDTH/2, SIZE_HEIGHT/2);
 
   p5.createCanvas(SIZE_WIDTH, SIZE_HEIGHT).parent(canvasParentRef);
@@ -126,6 +126,9 @@ export default function Home() {
     <Head>
       <title>polbac / INDEPENDENT DEVELOPER, TEACHER & CONSULTER</title>
 
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" />
+
     </Head>
 
     <main>
@@ -169,9 +172,19 @@ export default function Home() {
         
       </p>
 
-      <h3 className='title white'>some projects.</h3>
-      <br/>
-      <br/>
+      <h3 className='title white'>personal projects.</h3>
+
+      
+
+
+
+
+      <a className="project" href="https://www.hicetnunc.xyz/objkt/65374    " target="_blank">
+        <div className="project-left">CARCOSA [nft]</div>
+        <div className="project-center">www.hicetnunc.xyz/objkt/65374</div>
+        <div className="project-right"><img height="50" src="car.png" /></div>
+        <img />
+      </a>
       
       <a className="project" href="https://kestius.com/" target="_blank">
         <div className="project-left">KESTIUS</div>
@@ -276,7 +289,7 @@ export default function Home() {
       </div>
 
       <div className="item">
-        <h3>INFRAESTRUCTURE</h3>
+        <h3>INFRASTRUCTURE</h3>
         <p>vercel, heroku   </p>
       </div>
 
@@ -339,6 +352,14 @@ export default function Home() {
 
     }
 
+    #image:hover{
+      filter: hue-rotate(0) contrast(100)
+    }
+    #image{
+      transition: 1s all;
+      filter: hue-rotate(-167deg) contrast(21);
+    }
+
     .item{
       margin: auto;
       text-align: center;
@@ -358,6 +379,7 @@ export default function Home() {
     .item p{
       padding: 0;
       margin: 0;
+      color: white;
     }
 
     .contact:hover{
@@ -410,13 +432,13 @@ export default function Home() {
       }
 
       .project:hover{
-        color: #ffa8dc;
+        color: #65e590;
         
       }
       .project{
         display: flex;
         justify-content: space-between;
-        color: #383cef;
+        color: #fff;
         margin: auto;
         width: 100%;
         max-width: 900px;
@@ -509,7 +531,7 @@ flex: 1;
         line-height: 2.5rem;
         font-size: 2rem;
         text-align: center;
-        color: black;
+        color: #fff;
         margin-bottom: 20px;
         margin-top: 0px;
       }
@@ -549,7 +571,9 @@ flex: 1;
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
           DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
       }
-
+      h3{
+        font-family: "Dela Gothic One";
+      }
       .grid {
     
         margin-top: 3rem;
@@ -605,14 +629,11 @@ flex: 1;
     `}</style>
 
     <style jsx global>{`
-      @font-face{
-        font-family: "SpaceGrotesk-Bold";
-        src: url('/SpaceGrotesk-Bold.ttf.ttf')
-      }
+      
       html,
       body {
         overflow-x: hidden;
-        background: white;
+        background: black;
 background-size: 400% 400%;
 
 -webkit-animation: AnimationName 9s ease infinite;
@@ -622,7 +643,7 @@ animation: AnimationName 9s ease infinite;
 
         padding: 0;
         margin: 0;
-        font-family: "SpaceGrotesk-Bold", Helvetica Neue, sans-serif;
+        font-family: Helvetica Neue, sans-serif;
         color: blue;
       }
 
@@ -632,7 +653,7 @@ animation: AnimationName 9s ease infinite;
 
       body:after{
         content:"";
-        border: 50px solid black;
+        border: 50px solid white;
         position: fixed;
         width: 100vw; 
         height: 100vh; 
@@ -703,7 +724,7 @@ animation: AnimationName 9s ease infinite;
     
   }
   .title{
-    font-size: 3rem !important;
+    font-size: 2rem !important;
     line-height: 2.5rem  !important;
   }
   .description{
@@ -716,10 +737,10 @@ animation: AnimationName 9s ease infinite;
 .tags .tag{
   position: absolute;
   font-size: 20px;
-  border: 1px solid #ffa8dc;
+  border: 1px solid #65e590;
   padding-left: 10px;
   padding-right: 10px;
-  color: #ffa8dc;
+  color: #65e590;
 }
 
     `}</style>
