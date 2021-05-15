@@ -172,7 +172,7 @@ export default function Home() {
         
       </p>
 
-      <h3 className='title white'>personal projects.</h3>
+      <h3 className='title white'>some projects.</h3>
 
       
 
