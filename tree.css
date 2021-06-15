@@ -1,0 +1,53 @@
+.tree{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url(/inframundo-fondo.png);
+    background-size: cover;
+    color: white;
+    font-family: "Bentham", Arial, Helvetica, sans-serif;
+    
+}
+marquee{
+    font-size: 2rem;
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+    padding-top:0;
+    margin-top:0;
+    background: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: blue;
+}
+.tree article{
+    flex: 1;
+}
+
+.tree article .title{
+
+}
+
+.tree .area{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 1.25rem;
+    flex-direction: column;
+}
+
+.tree article a {
+    background: black;
+    color: white;
+    letter-spacing: 2px;
+    display: block;
+    border-style: groove;       
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
