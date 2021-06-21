@@ -4,10 +4,11 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url(/inframundo-fondo.png);
+    
+    background: url(/water.gif);
     background-size: cover;
     color: white;
-    font-family: "Bentham", Arial, Helvetica, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     
 }
 marquee{
@@ -29,7 +30,17 @@ marquee{
 .tree article .title{
 
 }
-
+.head{
+    background: url(/inframundo-fondo.png);
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+  
+    color: black;
+}
 .tree .area{
     display: flex;
     align-items: center;
