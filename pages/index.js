@@ -32,7 +32,7 @@ const setup = (p5, canvasParentRef) => {
   graphic.textFont(myFont);
   graphic.textAlign(p5.CENTER);
   graphic.textSize(SIZE_WIDTH > 600 ? 90 : 50);
-  graphic.fill('#65e590');
+  graphic.fill('#0000ff');
   graphic.text('polbac', SIZE_WIDTH/2, SIZE_HEIGHT/2);
 
   p5.createCanvas(SIZE_WIDTH, SIZE_HEIGHT).parent(canvasParentRef);
@@ -91,30 +91,9 @@ export default function Home() {
     const tags = ['react','angular','vue','node', 'styled-components', 'redux','hooks','redux-saga','typescript','next','vuex','wordpress', 'nuxt', 'vercel', 'react-native', 'ecommerce', 'threejs', 'pixijs', 'd3']
     const [p5Created, setP5Created] = useState(false);
     const [posts, setPosts] = useState([]);
-    const [frontendPosition, setFrontendPosition] = useState(0);
-    const [tagsPositions, setTagsPositions] = useState(tags.map(tag => ({
-      x: Math.random(),
-      y: Math.random(),
-      angle: Math.random(),
-    })));
+    
     let canvasRef = React.createRef();
 
-    useInterval(() => {
-      setFrontendPosition(window.scrollY / 10)
-      setTagsPositions(tagsPositions.map(position => {
-        if (position.y < 0) {
-          position.y = 1
-          position.x = Math.random()
-          position.angle = Math.random()
-        } else {
-          position.y -= 0.005
-          position.angle += 0.001
-        }
-        return position
-      }))
-    }, 10)
-
-    
     
     useEffect(async () => {
       const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@polbac')
@@ -126,56 +105,30 @@ export default function Home() {
     <Head>
       <title>polbac / INDEPENDENT DEVELOPER, TEACHER & CONSULTER</title>
 
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" />
-
+      <link href="/fonts3/stylesheet.css" rel="stylesheet" />
     </Head>
 
     <main>
 
-      <div className="tags">
-        {process.browser && tags.map((tag, index) => <div className='tag' style={{
-          transform: `rotate(${tagsPositions[index].angle * 360}deg) translate(${(tagsPositions[index].y * screen.height).toFixed(2)+'px'}, ${(tagsPositions[index].x * screen.width).toFixed(2)+'px'})`
-        }}>
-        {tag}
-          </div>
-        )}
-
-      </div>
+      
 
       {Sketch &&<Sketch ref={canvasRef} key="bla" setup={setup} draw={draw} preload={preload} />}
         
 
       
-      <h3 className='title'>INDEPENDENT DEVELOPER, TEACHER & CONSULTER.</h3>
-      <p className="description">
-      
-      Oriented on visual projects for the web & mobile.<br/><br/>
-      Loving <svg height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-	 viewBox="0 0 512 512" >
-<path fill="blue" d="M256,482.164c-3.526,0-7.052-1.238-9.88-3.713l-0.655-0.574
-	c-21.813-19.085-42.302-36.544-62.115-53.429c-53.171-45.309-99.088-84.437-131.005-122.397C16.633,259.578,0,219.954,0,177.351
-	c0-39.138,13.267-75.746,37.355-103.08C62.609,45.616,97.642,29.836,136,29.836c53.948,0,88.103,32.22,107.255,59.25
-	c4.97,7.014,9.196,14.047,12.745,20.665c3.549-6.618,7.776-13.651,12.745-20.665c19.152-27.029,53.307-59.25,107.255-59.25
-	c38.358,0,73.391,15.781,98.644,44.435C498.733,101.605,512,138.213,512,177.351c0,42.603-16.633,82.228-52.345,124.7
-	c-31.917,37.96-77.834,77.088-131.002,122.395c-19.816,16.887-40.305,34.346-62.118,53.431l-0.655,0.574
-	C263.052,480.927,259.526,482.164,256,482.164z M136,59.836c-29.621,0-56.66,12.171-76.138,34.271
-	C40.605,115.957,30,145.521,30,177.351c0,77.007,68.745,135.588,172.804,224.261c17.083,14.557,34.662,29.537,53.196,45.648
-	c18.535-16.112,36.113-31.091,53.193-45.646C413.255,312.939,482,254.358,482,177.351c0-31.83-10.605-61.394-29.863-83.245
-	C432.66,72.007,405.621,59.836,376,59.836c-41.129,0-67.716,25.338-82.776,46.594c-13.509,19.065-20.558,38.282-22.962,45.66
-	c-2.011,6.175-7.768,10.354-14.262,10.354s-12.251-4.179-14.262-10.354c-2.404-7.377-9.453-26.595-22.962-45.659
-	C203.716,85.174,177.129,59.836,136,59.836z"/>
+      <a className="project" href="http://inframundo.strlac.xyz/" target="_blank">
+        <div className="project-left">INFRAMUNDO</div>
+        <div className="project-center">inframundo.strlac.xyz</div>
+        <div className="project-right"><img height="50" src="inf.png" /></div>
+        <img />
+      </a>
 
-</svg> Experimental UIs, performance, SSR & SSG, test build & deploy.<br/><br/>
-      Lets get in touch via <a href='mailto:polbac@gmail.com'>email</a>, <a href='https://www.linkedin.com/in/polbac/'>linkedin</a> or <a href='https://www.instagram.com/polbac_______/'>instagram</a>.
-
-        
-      </p>
-
-      <h3 className='title white'>some projects.</h3>
-
-      
-
+      <a className="project" href="https://convocatorias.trimarchidg.net/" target="_blank">
+        <div className="project-left">TRIMARCHI2021</div>
+        <div className="project-center">convocatorias.trimarchidg.net</div>
+        <div className="project-right"><img height="50" src="tri.png" /></div>
+        <img />
+      </a>
 
 
 
@@ -249,98 +202,13 @@ export default function Home() {
         <div className="project-right"><img height="50" src="h.png" /></div>
         <img />
       </a>
-      <div className='line-container'>
-      ◖ᵔᴥᵔ◗
-
-
-      </div>
-      <h3 className='title white'>some technologies.</h3>
-      <br/>
-      <br/>
-
-      <div className="item">
-        <h3>FRONT-END</h3>
-        <p>react, angular, vue, svelte, redux, styled-components, apollo, typescript</p>
-      </div>
-
-      <div className="item">
-        <h3>MOBILE</h3>
-        <p>react-native, detox</p>
-      </div>
-
-      <div className="item">
-        <h3>CMS</h3>
-        <p>prismic, wordpress, expression engine</p>
-      </div>
-
-      <div className="item">
-        <h3>EXPERIMENTAL</h3>
-        <p>threejs, pixijs</p>
-      </div>
-
-      <div className="item">
-        <h3>E-COMMERCE</h3>
-        <p>woocommerce, stripe</p>
-      </div>
-
-      <div className="item">
-        <h3>BACKEND</h3>
-        <p>nodejs, express, strapi, typeorm</p>
-      </div>
-
-      <div className="item">
-        <h3>INFRASTRUCTURE</h3>
-        <p>vercel, heroku   </p>
-      </div>
-
-      <div className='line-container'>
-      (◠﹏◠) 
-
-      </div>
-
-      <h3 className='title white'>lets grow.</h3>
-      <br/>
-      <br/>
-
-      <div className="item">
-        <p>A/B test, collect data, segmentation, attribution</p>
-      </div>
-
-      <div className='line-container'>
-      (๑•́ ₃ •̀๑) 
-
-
-      </div>
-
-      <h3 className='title white'>some posts.</h3>
-      <br/>
-      <br/>
-        
-        {posts && posts.map(post => (
-          <a className="project post" href={post.link} target="_blank">
-          <div className="project-left" dangerouslySetInnerHTML={{ __html:post.title}}></div>
-          <div className="project-center">{moment(post.pubDate).fromNow()}</div>
-          <div className="project-right"><img height="50" src={post.thumbnail} /></div>
-        </a>
-        ))}
-      
-<br/>
-<br/>
-<div className='line-container'>
-(ᵔᴥᵔ)
-      </div>
-
-
-
-      <img width="200" id="image" src="polbac.jpeg" alt=""/>
-      <br/>
-      <br/>
-      <br/>
-<br/>
-
-      
+    
        
-
+    <p className="social">
+      <a href="https://www.linkedin.com/in/polbac/">lkd</a>
+      <a href="mailto:polbac@gmail.com">@</a>
+      <a href="https://www.instagram.com/polbac_______/">ig</a>
+    </p>
       
     </main>
 
@@ -352,12 +220,9 @@ export default function Home() {
 
     }
 
-    #image:hover{
-      filter: hue-rotate(0) contrast(100)
-    }
     #image{
-      transition: 1s all;
-      filter: hue-rotate(-167deg) contrast(21);
+      filter: blur(9px);
+      margin-top: 50px;
     }
 
     .item{
@@ -374,6 +239,17 @@ export default function Home() {
       padding: 0;
       margin: 0;
       color: blue;
+    }
+
+    .social{
+      font-size: 3rem;
+    }
+    .social a:hover{
+      filter: blur(5px);
+    }
+    .social a{
+      margin-left: 10px;
+      margin-right: 10px;
     }
 
     .item p{
@@ -432,9 +308,17 @@ export default function Home() {
       }
 
       .project:hover{
-        color: #65e590;
+        color: blue;
         
       }
+      .project:hover .project-center{
+        filter: blur(5px);
+      }
+
+      .project .project-center{
+        text-align: left;
+      }
+
       .project{
         display: flex;
         justify-content: space-between;
@@ -447,6 +331,7 @@ export default function Home() {
         padding-bottom: 15px;
         padding-top: 15px;
         text-align: left;
+        font-size: 2rem;
       }
       .project.last{
         border: 0;
@@ -568,11 +453,8 @@ flex: 1;
         border-radius: 5px;
         padding: 0.75rem;
         font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
       }
-      h3{
-        font-family: "Dela Gothic One";
+      
       }
       .grid {
     
@@ -643,7 +525,7 @@ animation: AnimationName 9s ease infinite;
 
         padding: 0;
         margin: 0;
-        font-family: Helvetica Neue, sans-serif;
+        font-family: 'Monument Grotesk', Helvetica Neue, sans-serif;
         color: blue;
       }
 
@@ -731,16 +613,6 @@ animation: AnimationName 9s ease infinite;
     font-size: 2rem !important;
     line-height: 1.9rem  !important;
   }
-}
-
-
-.tags .tag{
-  position: absolute;
-  font-size: 20px;
-  border: 1px solid #65e590;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #65e590;
 }
 
     `}</style>
