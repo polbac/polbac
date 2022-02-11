@@ -2,7 +2,7 @@ software engineer with focus on front-end currently working on [meet lara](https
 
 ### languages & libraries
 
-typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / sequelize / typeorm / pixijs / threejs / docker / and more
+typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5 / sequelize / typeorm / pixijs / threejs / docker / and more
 
 ### social network
 
