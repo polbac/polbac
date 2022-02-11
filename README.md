@@ -4,7 +4,7 @@
 
 typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5.js / heroku /sequelize / typeorm / pixijs / threejs / docker / aws / and more
 
-### 🉐 social network
+### 🉐 Social network
 
 [linkedin](https://www.linkedin.com/in/polbac/) / [profile](https://polbac.site/) / [instagram](https://www.instagram.com/polbac_______/) / [twitter](https://twitter.com/polbac) / [email](mailto:polbac@gmail.com)
 
