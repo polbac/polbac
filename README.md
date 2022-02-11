@@ -1,6 +1,6 @@
-## software engineer with focus on front-end currently working on [meet lara](https://meetlara.ai/)
+## Software engineer with focus on front-end currently working on [Meet Lara](https://meetlara.ai/)
 
-### ㊙️ languages & libraries
+### ㊙️ Languages & libraries
 
 typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5 / sequelize / typeorm / pixijs / threejs / docker / and more
 
