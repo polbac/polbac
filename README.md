@@ -2,7 +2,7 @@
 
 ### ㊙️ Languages & libraries
 
-typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5 / sequelize / typeorm / pixijs / threejs / docker / and more
+typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5.js / heroku /sequelize / typeorm / pixijs / threejs / docker / aws / and more
 
 ### 🉐 social network
 
