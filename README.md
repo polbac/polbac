@@ -2,7 +2,7 @@
 
 ### ㊙️ languages & libraries
 
-<span style="color:blue">typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5 / sequelize / typeorm / pixijs / threejs / docker / and more</span>
+typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5 / sequelize / typeorm / pixijs / threejs / docker / and more
 
 ### 🉐 social network
 
