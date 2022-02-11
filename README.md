@@ -1,6 +1,6 @@
 ## polbac
 
-Software engineer with focus on front-end currently working on [meet lara][https://meetlara.ai/]
+Software engineer with focus on front-end currently working on [meet lara](https://meetlara.ai/)
 
 ### languages & libraries
 
