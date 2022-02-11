@@ -1,4 +1,4 @@
-## software engineer with focus on front-end currently working on [meet lara](https://meetlara.ai/)
+## <span style="color:blue">software engineer with focus on front-end currently working on [meet lara](https://meetlara.ai/)</span>
 
 ### ㊙️ languages & libraries
 
