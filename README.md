@@ -1,8 +1,8 @@
-## <span style="color:blue">software engineer with focus on front-end currently working on [meet lara](https://meetlara.ai/)</span>
+## software engineer with focus on front-end currently working on [meet lara](https://meetlara.ai/)
 
 ### ㊙️ languages & libraries
 
-typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5 / sequelize / typeorm / pixijs / threejs / docker / and more
+<span style="color:blue">typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5 / sequelize / typeorm / pixijs / threejs / docker / and more</span>
 
 ### 🉐 social network
 
