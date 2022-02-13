@@ -146,6 +146,13 @@ export default function Home() {
         <img />
       </a>
 
+      <a className="project" href="http://centollasociety.com/" target="_blank">
+        <div className="project-left">CENTOLLA SOCIETY</div>
+        <div className="project-center">http://centollasociety.com/</div>
+        <div className="project-right"><img height="50" src="cen.png" /></div>
+        <img />
+      </a>
+
       <a className="project" href="http://lecube.tv/" target="_blank">
         <div className="project-left">LECUBE</div>
         <div className="project-center">lecube.tv</div>
