@@ -13,7 +13,14 @@ export default function Home() {
 
       <div className="description">
         hi! :) you can call me pol, i'm <MorphingText className="morph" texts={["software engineer", "digital designer"]} />
+
       </div>
+
+      <div className="text-center flex justify-center items-center mb-20">
+        <img src="/pol.jpg" alt="polbac" width="150" />
+      </div>
+
+
 
       <h2>Working now on</h2>
 
