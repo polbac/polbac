@@ -18,9 +18,9 @@ export default function Music() {
 
             <div className="description font-sx mt-5" >
                 <p>
-                    i am part of <a className="button" href="https://stralc.xyz/" target="_blank">STRLC records</a>
+                    i am part of <a className="button" href="https://strlac.xyz/" target="_blank">STRLAC records</a>
                 </p>
-                <p className="mt-5">
+                <p className="mt-5" style={{ lineHeight: "1.75rem" }}>
                     you can find me on<br /><a className="button" href="https://bandcamp.com/polbac" target="_blank">bandcamp</a>, <a className="button" href="https://www.ninaprotocol.com/profiles/polbac" target="_blank">nina protocol</a>
                 </p>
             </div>
