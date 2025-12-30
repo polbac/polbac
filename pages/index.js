@@ -33,7 +33,7 @@ export default function Home() {
       <div className="card">
         <div className="chip">CO-CREATING 1/2</div>
         <h3><img src="/logos/docu.svg" alt="docu logo" width="120" /></h3>
-        <p>We are building a platform for Latin American galleries to manage their artists, catalogs, exhibitions, sales, and shipments. We leverage AI tools to streamline workflows and accelerate development processes.</p>
+        <p className="mt-2">We are building a platform for Latin American galleries to manage their artists, catalogs, exhibitions, sales, and shipments. We leverage AI tools to streamline workflows and accelerate development processes.</p>
         <div className="card-footer">
           <a className="button" target="_blank" href="https://www.docu.art/">Go →</a></div>
       </div>
@@ -43,7 +43,7 @@ export default function Home() {
       <div className="card">
         <div className="chip">CO-CREATING 1/3</div>
         <h3><img src="/logos/bond.svg" alt="bond club logo" width="200" /></h3>
-        <p>We are building a film platform for indie producers and enthusiasts, creating a circular monetization ecosystem.</p>
+        <p className="mt-2">We are building a film platform for indie producers and enthusiasts, creating a circular monetization ecosystem.</p>
         <div className="card-footer">
           <a className="button" href="#">Cooming soon</a></div>
       </div>
