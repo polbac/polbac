@@ -10,7 +10,7 @@ export default function Music() {
 
             <div className="flex gap-5 flex-col md:flex-row items-center">
 
-                <iframe className="album" src="https://bandcamp.com/EmbeddedPlayer/album=3451589319/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless />
+                <iframe className="album" src="https://bandcamp.com/EmbeddedPlayer/album=542068282/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless />
                 <iframe className="album" src="https://bandcamp.com/EmbeddedPlayer/album=2255985704/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless />
 
             </div>
