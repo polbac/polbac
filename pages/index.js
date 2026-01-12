@@ -27,7 +27,7 @@ export default function Home() {
       <div className="card">
         <div className="chip">FULL TIME</div>
         <h3><img src="/logos/nx.svg" alt="bond club logo" width="150" /></h3>
-        <p>Working as a sr software engineer on payments fluxes (aka collections)</p>
+        <p>Working as a sr software engineer on payment fluxes (aka collections)</p>
         <div className="card-footer">
           <a className="button" target="_blank" href="https://www.naranjax.com/">Go →</a></div>
       </div>
