@@ -2,13 +2,11 @@
 
 ### ㊙️ Languages & libraries
 
-typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5.js / heroku / sequelize / typeorm / pixijs / threejs / docker / sqs / bulljs / lambdas / etc
+typescript / react / express / nextjs / redux / angular / graphql / apollo / react native / p5.js / heroku / sequelize / typeorm / pixijs / threejs / docker / sqs / bulljs / lambdas / k8s / kafka
 
 ### 🉐 Social network
 
 [linkedin](https://www.linkedin.com/in/polbac/) / [profile](https://polbac.xyz/) / [instagram](https://www.instagram.com/polbac_______/) / [email](mailto:polbac@gmail.com)
-
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=polbac&show_icons=true&theme=dracula)
 
 
 
