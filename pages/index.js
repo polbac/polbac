@@ -17,7 +17,7 @@ export default function Home() {
       </div>
 
       <div className="text-center flex justify-center items-center mb-20">
-        <img src="/pol.jpg" alt="polbac" width="150" />
+        <img src="https://avatars.githubusercontent.com/u/30608355?v=4" alt="polbac" width="150" />
       </div>
 
 
