@@ -1,7 +1,7 @@
  html,
  body {
      overflow-x: hidden;
-     background: white;
+     background: black;
      background-size: 400% 400%;
 
      -webkit-animation: AnimationName 9s ease infinite;
@@ -12,13 +12,6 @@
      padding: 0;
      margin: 0;
      font-family: 'satoshi', sans-serif;
-     color: black;
-     transition: background-color 0.3s ease, color 0.3s ease;
- }
-
- html.dark,
- html.dark body {
-     background: black;
      color: white;
  }
 
@@ -51,14 +44,8 @@
  }
 
  .button:hover {
-     border-bottom: 1px solid currentColor;
-     opacity: 0.7;
- }
-
- html.dark .button:hover {
      border-bottom: 1px solid white;
      color: white;
-     opacity: 1;
  }
 
  .card-footer {
@@ -235,7 +222,7 @@
 
  .description {
      font-size: 2rem;
-     color: inherit;
+     color: white;
      text-align: center;
  }
 
@@ -244,23 +231,4 @@
      height: 350px;
  }
 
- .theme-toggle {
-     position: fixed;
-     top: 30px;
-     right: 20px;
-     background: blue;
-     color: white;
-     border: none;
-     padding: 0.5rem 1rem;
-     border-radius: 90px;
-     cursor: pointer;
-     font-family: 'satoshi', sans-serif;
-     font-size: 0.9rem;
-     z-index: 99999999;
-     box-shadow: 0px 0px 20px blue;
-     transition: transform 0.2s ease;
- }
 
- .theme-toggle:hover {
-     transform: scale(1.05);
- }
