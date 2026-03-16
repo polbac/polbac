@@ -44,7 +44,9 @@ export default function Home() {
 </svg>
 
         </h3>
-        <p>Working as a react swe</p>
+        <p style={{marginTop:"10px"}}>Humand is an all-in-one HR platform designed to simplify and centralize people management for modern organizations.
+It covers the full employee lifecycle — from onboarding and time-off to org structure and workforce insights.
+As a React Software Engineer at Humand, I build the interfaces that bring this experience to life for HR teams and employees every day.</p>
         <div className="card-footer">
           <a className="button" target="_blank" href="https://humand.co/">Go →</a></div>
       </div>
