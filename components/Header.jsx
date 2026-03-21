@@ -80,8 +80,7 @@ export default function Header() {
                 <ul>
                     <li><Link href="/">Work</Link></li>
                     <li><Link href="/music">Music</Link></li>
-
-
+                    <li><Link href="/commitment">Commitment</Link></li>
                 </ul>
             </nav>
         </header>
